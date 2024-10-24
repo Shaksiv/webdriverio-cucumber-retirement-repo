@@ -1,0 +1,35 @@
+{
+  "name": "webdriverio-retirement",
+  "version": "1.0.0",
+  "description": "webdriverio project for retirement calm",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaksiv/webdriverio-retirement-project.git"
+  },
+  "keywords": [
+    "cucumber",
+    "webdriverio",
+    "node"
+  ],
+  "author": "Shakeela Sivaram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaksiv/webdriverio-retirement-project/issues"
+  },
+  "homepage": "https://github.com/Shaksiv/webdriverio-retirement-project#readme",
+  "devDependencies": {
+    "@wdio/cli": "^9.2.1",
+    "@wdio/cucumber-framework": "^9.1.3",
+    "@wdio/local-runner": "^9.2.1",
+    "@wdio/spec-reporter": "^9.1.3"
+  },
+  "dependencies": {
+    "selenium-standalone": "^10.0.0",
+    "tsx": "^4.19.1"
+  }
+}
