@@ -188,16 +188,24 @@ class retirementCalcPage {
     async calculate() {
 
         await this.calculateButton.click();
-        await browser.pause(2000)
+        //added
+            const messageElement = await this.resultMessageSuccess;
+            await browser.waitUntil(async function () {
+              return (await messageElement.isDisplayed)
+            }, {
+              timeout: 5000,
+              timeoutMsg: 'expected text to be different after 5s'
+            })
+          
        
         
     }
 
     async getPageSubmitMessageSuccess(transaction: String) {
 //waiting for element to load and getting text from message
-            await this.resultMessageSuccess.waitForDisplayed() 
+            browser
             let message = this.resultMessageSuccess.getText()
-            await browser.pause(2000)
+            browser.pause(2000)
             console.log(message);
             return message;
         
@@ -207,7 +215,7 @@ class retirementCalcPage {
     async getPageSubmitMessageFail(transaction: String) {
         //waiting for element to load and getting text from message
               
-                    await this.resultMessageFailure.waitForDisplayed()
+                    await this.resultMessageFailure.isDisplayed
                     let message = this.resultMessageFailure.getText()
                     console.log(message);
                     return message;
