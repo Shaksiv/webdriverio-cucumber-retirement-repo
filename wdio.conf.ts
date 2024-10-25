@@ -33,10 +33,10 @@ exports.config = {
     ],
     //
     suites : {
-        calc: [
+        smoke: [
             './features/**/calculator.feature'
         ],
-        adjustdefault: [
+        regression: [
             './features/**/adjustDefaultCalc.feature'
         ]
     },
@@ -143,13 +143,7 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     
      reporters: [
-    "spec",
-    [
-      'allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
-    }]],
+    "spec",'concise'],
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
