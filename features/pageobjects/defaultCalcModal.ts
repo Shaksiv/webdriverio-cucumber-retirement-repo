@@ -25,6 +25,7 @@ class defaultCalcModal {
         //had to use this method of element finding bad code- needs change
         let linktext = await $('a=Adjust default values');
       await linktext.click();
+      
     }
 
     

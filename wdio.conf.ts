@@ -1,6 +1,6 @@
 
 exports.config = {
-    
+
     //
     // ====================
     // Runner Configuration
@@ -32,6 +32,14 @@ exports.config = {
         // 'path/to/excluded/files'
     ],
     //
+    suites : {
+        calc: [
+            './features/**/calculator.feature'
+        ],
+        adjustdefault: [
+            './features/**/adjustDefaultCalc.feature'
+        ]
+    },
     // ============
     // Capabilities
     // ============
@@ -55,8 +63,12 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
-    }],
+        browserName: 'chrome' // or "firefox"//, "microsoftedge", "safari"
+    }
+    
+   // ,{browserName: 'microsoftedge'}
+
+],
 
     //
     // ===================
@@ -130,7 +142,14 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     
-     reporters: ['spec'],
+     reporters: [
+    "spec",
+    [
+      'allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]],
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
