@@ -1,4 +1,5 @@
-
+///import { v4 as uuidv4 } from 'uuid'
+//import { publishCucumberReport } from '@wdio/cucumber-framework';
 exports.config = {
 
     //
@@ -168,12 +169,21 @@ exports.config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tagExpression: '',
+        tagExpression: '@smoke,@regression,@sanity',
         // <number> timeout for step definitions
+      //  format: [
+       //     ['message', `./reports/${uuidv4()}.ndjson`],
+       //     ['json', './reports/test-report.json']
+       // ],
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },
+    
+    //Hooks
+  //  async onComplete() {
+    //    await publishCucumberReport('./reports');
+    //}
 
 
     //
